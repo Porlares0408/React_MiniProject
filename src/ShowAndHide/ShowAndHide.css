@@ -1,0 +1,31 @@
+.ShowHide_Main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ShowHide_Main > h1 {
+  font-size: clamp(2em, 2vw, 4em);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.ShowHide_Main > button {
+  width: 90%;
+  height: 15%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(31, 184, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+.ShowHide_Main > p {
+  font-size: clamp(1em, 1vw, 0.1em);
+}
+.ShowHide_Main > button:hover {
+  background-color: rgb(150, 215, 245);
+}
+.ShowHide_Main > button:active {
+  color: rgb(255, 255, 255);
+}

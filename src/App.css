@@ -1,0 +1,6 @@
+.Grid_Control {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(200px, auto); /* rows responsive */
+  gap: 1rem;
+}

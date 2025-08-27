@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units Demo (Tagalog)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #d9534f;
+        }
+
+        .box {
+            border: 1px solid #333;
+            padding: 10px;
+            margin: 10px 0 30px 0;
+            background: #f8f8f8;
+        }
+
+        /* px example */
+        .px-box {
+            width: 200px;
+            /* laging 200px kahit anong screen */
+            height: 100px;
+        }
+
+        /* % example */
+        .percent-box {
+            width: 50%;
+            /* kalahati ng lapad ng parent */
+            height: 100px;
+        }
+
+        /* em example */
+        .em-parent {
+            font-size: 20px;
+            /* base font-size */
+            border: 2px solid blue;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .em-child {
+            font-size: 2em;
+            /* 2 × parent font-size = 40px */
+            background: lightblue;
+            padding: 10px;
+        }
+
+        /* rem example */
+        html {
+            font-size: 16px;
+            /* default base */
+        }
+
+        .rem-box {
+            font-size: 2rem;
+            /* 32px kahit saan, base sa root */
+        }
+
+        /* vw example */
+        .vw-box {
+            font-size: 5vw;
+            /* text size = 5% ng screen width */
+            background: #ffe08a;
+        }
+
+        /* vh example */
+        .vh-box {
+            height: 40vh;
+            /* 40% ng screen height */
+            background: #d0ffd0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⚡ Demo: CSS Units (Tagalog Version)</h1>
+    <p>Ito yung mga pinaka gamit na units sa CSS. Resize mo yung window para makita yung difference.</p>
+
+    <h2>📌 px (pixels) - fixed</h2>
+    <p><b>Meaning:</b> Laging fixed value, hindi nagbabago kahit anong screen.</p>
+    <div class="box px-box">200px lapad (fixed lagi)</div>
+
+    <h2>📌 % (percent) - relative sa parent</h2>
+    <p><b>Meaning:</b> Based sa lapad/taas ng parent container.</p>
+    <div class="box percent-box">50% ng parent width</div>
+
+    <h2>📌 em - relative sa font-size ng parent</h2>
+    <p><b>Meaning:</b> Lumalaki/liliit depende sa laki ng text ng parent.</p>
+    <div class="em-parent">
+        Parent font-size = 20px
+        <div class="em-child">Child = 2em (40px)</div>
+    </div>
+
+    <h2>📌 rem - relative sa root (html)</h2>
+    <p><b>Meaning:</b> Base sa <code>html</code> font-size (default 16px). Consistent kahit nested.</p>
+    <div class="box rem-box">Font-size: 2rem (32px)</div>
+
+    <h2>📌 vw - relative sa screen width</h2>
+    <p><b>Meaning:</b> 1vw = 1% ng screen width. Resize mo browser para magbago size.</p>
+    <div class="box vw-box">Text size = 5vw</div>
+
+    <h2>📌 vh - relative sa screen height</h2>
+    <p><b>Meaning:</b> 1vh = 1% ng screen height. Kaya kahit i-resize mo vertical, susunod.</p>
+    <div class="box vh-box">Height = 40vh (40% ng taas ng screen)</div>
+
+</body>
+
+</html>

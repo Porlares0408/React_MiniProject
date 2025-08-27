@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Text Demo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .box {
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* % relative to parent font-size */
+        .percent h1 {
+            font-size: 200%;
+            /* 2x parent font-size */
+        }
+
+        /* vw relative to viewport width */
+        .vw h1 {
+            font-size: 5vw;
+            /* 5% of screen width */
+        }
+
+        /* clamp (min, preferred, max) */
+        .clamp h1 {
+            font-size: clamp(16px, 5vw, 48px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box percent">
+        <h2>% Example</h2>
+        <h1>Hello World</h1>
+        <p>(scales only relative to parent font-size)</p>
+    </div>
+
+    <div class="box vw">
+        <h2>vw Example</h2>
+        <h1>Hello World</h1>
+        <p>(scales with window width)</p>
+    </div>
+
+    <div class="box clamp">
+        <h2>clamp() Example</h2>
+        <h1>Hello World</h1>
+        <p>(scales with viewport, but min 16px, max 48px)</p>
+    </div>
+</body>
+
+</html>

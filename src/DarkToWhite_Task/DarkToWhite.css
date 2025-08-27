@@ -1,0 +1,16 @@
+.DarkToWhite_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.DarkToWhite_main > button {
+  font-size: clamp(2rem, 2vw, 1em); /* responsive size depende sa screen */
+  width: 90%;
+  border: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}

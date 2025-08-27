@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beginner React useState Project Ideas</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --accent: #22d3ee;
+            --border: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: linear-gradient(180deg, var(--bg), #0b1023 70%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            margin: 0 0 6px;
+            letter-spacing: .3px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: .98rem;
+        }
+
+        .card {
+            background: linear-gradient(180deg, var(--card), #0e1529);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        ol {
+            counter-reset: item;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        li {
+            list-style: none;
+            padding: 14px 14px 14px 56px;
+            position: relative;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .02);
+        }
+
+        li::before {
+            counter-increment: item;
+            content: counter(item) ".";
+            position: absolute;
+            left: 14px;
+            top: 14px;
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: rgba(34, 211, 238, .12);
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.02rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .desc {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .tip {
+            margin-top: 22px;
+            padding: 14px;
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .03);
+        }
+
+        .tip strong {
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: .95rem;
+            text-align: center;
+        }
+
+        .kbd {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: .9rem;
+            background: #0b1224;
+            border: 1px solid var(--border);
+            padding: 2px 6px;
+            border-radius: 6px;
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Beginner <span style="color:var(--accent)">useState</span> Project Ideas</h1>
+            <p class="subtitle">Small, practical React projects you can build using only <code
+                    class="kbd">useState</code>.</p>
+        </header>
+
+        <section class="card">
+            <ol>
+                <li>
+                    <div class="item-title">Counter App 🧮</div>
+                    <p class="desc">Buttons to increase, decrease, and reset a number. Great for learning numeric state
+                        updates.</p>
+                </li>
+                <li>
+                    <div class="item-title">Toggle Light / Dark Mode 🌗</div>
+                    <p class="desc">A button that switches between “Light” and “Dark” themes. Perfect for practicing
+                        booleans.</p>
+                </li>
+                <li>
+                    <div class="item-title">Show / Hide Text 👀</div>
+                    <p class="desc">A button that hides or shows a piece of text. Practice conditional rendering with a
+                        boolean.</p>
+                </li>
+                <li>
+                    <div class="item-title">Form Input Sync 📝</div>
+                    <p class="desc">A text input that updates live as you type. Exactly like your Name / Comment / Qty
+                        example.</p>
+                </li>
+                <li>
+                    <div class="item-title">Like Button ❤️</div>
+                    <p class="desc">Toggle between “Liked 👍” and “Unliked 👎”. Combine a boolean and a small counter.
+                    </p>
+                </li>
+                <li>
+                    <div class="item-title">Simple Calculator ➕➖✖️➗</div>
+                    <p class="desc">Enter two numbers and compute add / subtract / multiply / divide results using
+                        state.</p>
+                </li>
+                <li>
+                    <div class="item-title">Password Visibility Toggle 🔒👁</div>
+                    <p class="desc">Switch a password field between hidden and visible with a single piece of boolean
+                        state.</p>
+                </li>
+                <li>
+                    <div class="item-title">Dropdown Menu ⬇️</div>
+                    <p class="desc">A button that shows/hides a menu. Practice managing open/closed UI with state.</p>
+                </li>
+                <li>
+                    <div class="item-title">Color Picker 🎨</div>
+                    <p class="desc">Choose a color and apply it to a box or the page background. Great for string state.
+                    </p>
+                </li>
+                <li>
+                    <div class="item-title">To‑Do List (Basic) ✅</div>
+                    <p class="desc">Add tasks, list them, remove a task. Teaches arrays in state and immutable updates.
+                    </p>
+                </li>
+            </ol>
+
+            <div class="tip">
+                <p><strong>Suggestion:</strong> Start with the <em>Counter App</em>, then try <em>Form Input Sync</em>,
+                    and finally build a small <em>To‑Do List</em> once you're comfortable.</p>
+            </div>
+        </section>
+
+        <footer>
+            Open this file with the VS Code <span class="kbd">Live Server</span> extension to view it locally.
+        </footer>
+    </div>
+</body>
+
+</html>
