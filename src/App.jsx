@@ -2,6 +2,7 @@ import Counter from "./Counter_Task/Counter.jsx";
 import DarkToWhite from "./DarkToWhite_Task/DarkToWhite.jsx";
 import "./App.css";
 import ShowAndHide from "./ShowAndHide/ShowAndHide.jsx";
+import TypeSync from "./TypeSync/TypeSync.jsx";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Counter />
         <DarkToWhite />
         <ShowAndHide />
+        <TypeSync />
       </div>
     </>
   );

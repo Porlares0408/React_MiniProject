@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>How to Host a React (Vite) Project on GitHub Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background: #f9f9f9;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #fff;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Step-by-Step Guide: Hosting a React (Vite) Project on GitHub Pages</h1>
+
+    <div class="step">
+        <h2>1. Push your project to GitHub</h2>
+        <ol>
+            <li>Initialize git if not done already:
+                <pre><code>git init
+git add .
+git commit -m "Initial commit"</code></pre>
+            </li>
+            <li>Connect to GitHub repository:
+                <pre><code>git remote add origin https://github.com/USERNAME/REPO_NAME.git
+git branch -M main
+git push -u origin main</code></pre>
+            </li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>2. Install GitHub Pages deploy tool</h2>
+        <pre><code>npm install gh-pages --save-dev</code></pre>
+    </div>
+
+    <div class="step">
+        <h2>3. Configure vite.config.js</h2>
+        <p>Add a <code>base</code> property with your repo name:</p>
+        <pre><code>import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  base: '/REPO_NAME/',  // Replace with your repo name
+  plugins: [react()],
+})</code></pre>
+    </div>
+
+    <div class="step">
+        <h2>4. Update package.json</h2>
+        <p>Add <code>homepage</code> and scripts:</p>
+        <pre><code>"homepage": "https://USERNAME.github.io/REPO_NAME",
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}</code></pre>
+    </div>
+
+    <div class="step">
+        <h2>5. Deploy</h2>
+        <pre><code>npm run deploy</code></pre>
+        <p>This builds your app and pushes the <code>dist</code> folder to the <code>gh-pages</code> branch.</p>
+    </div>
+
+    <div class="step">
+        <h2>6. Enable GitHub Pages</h2>
+        <ol>
+            <li>Go to your repository on GitHub.</li>
+            <li>Open <b>Settings &gt; Pages</b>.</li>
+            <li>Set Source to <code>Deploy from a branch</code>.</li>
+            <li>Choose <code>gh-pages</code> branch, <code>/(root)</code>.</li>
+            <li>Save.</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>7. Visit Your Site 🎉</h2>
+        <p>Your React app will be live at:</p>
+        <p><code>https://USERNAME.github.io/REPO_NAME</code></p>
+        <p>(Wait 2-5 minutes the first time)</p>
+    </div>
+
+    <hr>
+    <p><b>Tip:</b> Each time you update your code, run <code>npm run deploy</code> again to update the site.</p>
+</body>
+
+</html>
