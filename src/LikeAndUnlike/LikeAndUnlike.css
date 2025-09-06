@@ -1,0 +1,43 @@
+.LikeAndUnlike_Main {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  border: 1px solid black;
+}
+.Target_Buttons_Div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+}
+.LikeAndUnlike_Main > p {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1em, 5vw, 0.1em);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.Target_Buttons_Div > button {
+  border: none;
+  flex: 1 1 150px; /* grow 1, shrink 1, base width 150px */
+  max-width: 200px; /* ensures buttons don’t shrink smaller than 50px */
+  height: clamp(40px, 3vw, 60px); /* min 40px, scales with 3vw, max 60px */
+  border-radius: 10px;
+}
+.Reaction_Counter {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.LikeAndUnlike_Main > .Reaction_Counter > h1 {
+  font-size: clamp(20px, 10vw, 50px);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
